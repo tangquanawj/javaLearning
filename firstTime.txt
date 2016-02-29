@@ -1,0 +1,58 @@
+基本语法：
+1、大小写敏感
+2、类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母都应该大写
+3、方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。
+4、源文件名：源文件名必须和类名相同。保存文件时，应该以类名作为文件名保存，文件的后缀为.java
+5、主方法入口：所有的java程序由public static void main(String []args)方法执行
+
+java标识符：
+1、所有的标识符都应该以字母、美元符、或者下划线开始
+2、首字符之后可以是任何字符的组合
+3、关键字不能用做标识符
+4、标识符大小写敏感
+5、合法标识符举例：age、$salary、_value、__1_value
+6、非法标识符举例：123abc、-salary
+
+java修饰符:
+1、可访问修饰符：default、public、protected、private
+2、不可访问修饰符：final,abstract,strictfp
+
+java变量：
+1、局部变量
+2、类变量(静态变量)
+3、成员变量(非静态变量)
+
+Java数组：
+
+Java枚举(枚举类型：enum)：枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的bug。
+例如：我们为果汁店设计一个程序，他将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除这三种尺寸外的果汁。
+枚举类型举例：
+class FreshJuice{
+	enum FreshJuiceSize{ SMALL, MEDIUM, LARGE }
+	FreshJuiceSize size;
+}
+public class FreshJuiceTest {
+	public static void main(String args[]) {
+		FreshJuice juice = new FreshJuice();
+		juice.size = FreshJuice.FreshJuiceSize.MEDIUM;
+	}
+}
+注意：枚举可以单独声明或者声明在类里面。方法、变量、构造函数也可以在枚举中定义。
+
+Java注释：
+类似于c/c++,Java也支持单行以及多行注释。注释中的字符将被Java编译器忽略。
+1、/*这是一个单行注释*/
+/2、//这也是一个单行注释
+/3、/*这
+ *是一个多行注释
+ */
+ 
+Java空行：编译器忽略。
+
+继承：
+在Java中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类。
+利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）。
+
+接口：
+在Java中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。
+接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。
