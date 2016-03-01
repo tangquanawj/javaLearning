@@ -1,0 +1,60 @@
+和String类不同的是，StringBuffer和StringBuidler类能够被多次修改，并且不产生新的未使用对象。
+StringBuilder类不是线程安全的，但是他的速度快
+StringBuffer类是线程安全的，但是他的速度慢。
+demo:
+public class Test {
+	public static void main(String[] args) {
+		StringBuffer sBuffer = new StringBuffer("test");
+		sBuffer.append(" String Buffer");
+		System.out.println(sBuffer);
+	}
+}
+StringBuffer的方法有：
+1、public StringBuffer append(String s):追加制定的字符串到此字符序列
+2、public StringBuffer reverse():将此字符序列用其反转形式取代。
+3、public delete(int start,int end):移除此序列的子字符串中的字符：注意的是，字符串的第一个字符的角标为0，然不是一，最后一个字符的角标
+为end-1;这点需要注意。
+4、public insert(int offset,int i):将int参数的字符串表示形式插入此序列中。将后面这个int类型的i从第几号位置插入。
+5、replace(int start,int end, String str):使用给定String中的字符替换此序列的子字符串中的字符。
+
+Java数组：
+
+第一步：声明数组变量：必须声明数组变量，才能在程序中使用数组。
+有两种声明的方法：
+dataType[] arrayRefVar;和
+dataType arrayRefVar[]
+一般java语言使用第一种，便于让程序员快速理解java语言。
+
+第二步：创建数组：使用new操作符来创建数组。
+arrayRefVar = new dataType [arraySize];
+这个语法做了两件事:
+第一是使用dataType[arraySize]创建了一个数组。
+第二是把新创建的数组的引用赋值给变量arrayRefVar
+声明数组和创建数组可以用一条语句完成，
+dataType[] arrayRefVar = new dataType[arraySize];
+还可以使用以下的方式创建数组。
+dataType[] arrayRefVar = {value0,value1,value2,value3,...};索引从0开始，从0到arrayRefVar.length-1、public
+demo:
+public class TestArray{
+	
+	public static void main{String[] args} {
+		int size = 10;
+		double[] myList = new double[size];
+		myList[0] = 5.6;
+		myList[1] = 4.5;
+		myList[2] = 3.3;
+		myList[4] = 4.0;
+		myList[5] = 34.33;
+		myList[6] = 34.0;
+		myList[7] = 45.45;
+		myList[8] = 99.993;
+		myList[9] = 11123;
+		
+		double total = 0;
+		for(int i=0;i < size;i++){
+			total += myList[i];
+		}
+		System.out.println("总和为： " + total);
+	}
+}
+
