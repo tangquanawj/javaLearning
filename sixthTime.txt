@@ -102,3 +102,12 @@ try{
 序运行下去，并且输出为什么出错！
 try的话，配合log4j使用会对程序的日后维护帮助很大。
 <*******************try catch的作用结束****************>
+
+
+和Date()相对应的类是Calendar类
+1、创建一个代表系统当前日期的Calendar对象。
+Calendar c = Calendar.getInstance();//默认是当前日期
+创建一个指定日期的Calendar对象
+//创建一个代表2009年6月12日的Calendar对象
+Calendar c1 = Calendar.getInstance();
+c1.set(2009,6,-1,12);
