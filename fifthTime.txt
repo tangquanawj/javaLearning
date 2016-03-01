@@ -58,3 +58,9 @@ public class TestArray{
 	}
 }
 
+声明数组变量：
+double[] myList;或者double myList[];
+创建数组：
+myList = new double[size];
+myList.length:可以返回数组的长度。
+
