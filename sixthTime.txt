@@ -1,0 +1,104 @@
+java日期时间：
+Data类通过两个构造函数来实例化Data对象。
+Date()
+第二个构造函数接收一个参数，是微秒数。
+Date(long millisec)
+Date时间对象创建后，可以调用下面的方法。
+1、boolean after(Date date):若当调用此方法的Date对象在指定日期之后返回true,否则返回false。
+2、boolean before(Date date)若当调用此方法的Date对象在指定日期之前返回true,否则返回false。
+3、Object clone()：返回此对象的副本。
+4、int compareTo(Date date):int compareTo(Date date)比较当调用此方法的Date对象和指定日期。两者相等时候返回0。调用对象在指定日期之前则返回负数。调用对象在指定日期之后则返回正数。
+5、long getTime():可以得到时间。
+6、int hashCode()：返回对象的哈希代码
+7、void setTime(long time)：用自1970年1月1日00:00:00 GMT以后time毫秒数设置时间和日期。
+8、String toString( )转换Date对象为String表示形式，并返回该字符串。
+
+获取当前时间的实例：
+
+public class DateDemo{
+	
+	public static void main(String[] args) {
+		//初始化时间对象
+		Date date = new Date();
+		//打印时间
+		System.out.println(date.toString());
+	}
+}
+
+日期比较的方法：
+使用getTime( ) 方法获取两个日期（自1970年1月1日经历的微妙数值），然后比较这两个值。
+使用方法before()，after()和equals()。例如，一个月的12号比18号早，则new Date(99, 2, 12).before(new Date (99, 2, 18))返回true。
+使用compareTo()方法，它是由Comparable接口定义的，Date类实现了这个接口。
+
+使用SimpleDateFormat格式化日期：
+public class DateDemo{
+	public static void main(String[] args){
+		Date dNow = new Date();
+		SimpleDateFormat ft=new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+		System.out.println("Current Date: " + ft.format(dNow));
+	}
+}
+
+简单的DateFormat格式化编码：时间模式字符串用来指定时间格式。
+在此模式中，所有的ASCII字母被保留为模式字母：定义如下：
+G	纪元标记	AD
+y	四位年份	2001
+M	月份	July or 07
+d	一个月的日期	10
+h	 A.M./P.M. (1~12)格式小时	12
+H	一天中的小时 (0~23)	22
+m	分钟数	30
+s	秒数	55
+E	星期几	Tuesday
+D	一年中的日子	360
+F	一个月中第几周的周几	2 (second Wed. in July)
+w	一年中第几周	40
+W	一个月中第几周	1
+a	A.M./P.M. 标记	PM
+k	一天中的小时(1~24)	24
+K	 A.M./P.M. (0~11)格式小时	10
+z	时区	Eastern Standard Time
+
+
+使用printf方法格式化日期
+public class DateDemo{
+	
+	public static void main(String []args ) {
+		//初始化Date对象
+		String str = String.format("Current Date/Time : %tc",date);
+		System.out.printf(Str);
+		
+	}
+}
+
+
+
+Java中的休眠问题(sleep)
+sleep是当前线程进入停滞状态(阻塞当前线程),让出Cpu的使用，目的是不让当前线程独自霸占该进程所获的CPU资源，以留一定时间给其他线程执行的机会。
+你可以让程序休眠一毫秒的时间或者到您的计算机的寿命长的任意段时间。例如，下面的程序会休眠3秒：
+public class SleepDemo{
+	
+	public static void main(String[] args){
+		try {
+			System.out.println(new Date() + "\n");
+			Thread.sleep(1000*3);//休眠三秒
+			System.out.println(new Date() + "\n");
+		}
+		catch(Exception e){
+			System.out.println("Got an exception");
+		}
+	}
+}
+
+<*******************try catch的作用开始****************>
+首先要清楚，如果没有try的话，出现异常会导致程序崩溃。
+而try则可以保证程序的正常运行下去，比如说：
+try{
+	int i = 1/0;
+}catch (Exception e){
+	....
+}
+一个计算的话，如果除数为0，则会报错，如果没有try的话，程序直接崩溃。用try的话，则可以让程
+序运行下去，并且输出为什么出错！
+try的话，配合log4j使用会对程序的日后维护帮助很大。
+<*******************try catch的作用结束****************>

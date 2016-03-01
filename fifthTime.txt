@@ -64,3 +64,63 @@ double[] myList;或者double myList[];
 myList = new double[size];
 myList.length:可以返回数组的长度。
 
+处理数组时：通常使用基本循环或者foreach循环
+public class TestArray {
+	
+	public static void main(String[] args) {
+		double[] myList = {1,34,4,4,4,4,3,3,4};
+		//打印所有数组
+		for (int i =0;i<myList.length;i++){
+			System.out.println(myList[i]);
+		}
+		//计算所有元素的和
+		for (int i=0;i<myList.length;i++){
+			int total=0;
+			total +=myList[i];
+		}
+		System.out.println(total);
+		//查找最大元素
+		for (int i=0;i<myList.length;i++){
+			int max=myList[0];
+			if(myList[i]>max){
+				max = myList[i];
+			}
+		}
+		System.out.println("Max is " + max);
+	}
+}
+
+foreach循环：Jdk1.5引进了一种新的循环机制，被称为foreach循环或称为加强型循环
+他能在不使用下标的情况下遍历数组。foreach不是一个关键字，能用foreach写的肯定也能用for写
+public class TestArray {
+	
+	public static void main(String[] args) {
+		double myList = {1,3,3,4,5,6,7};
+		//打印所有数组元素
+		for (double element: myList) {
+			System.out.println(element);
+		}
+		
+	}
+}
+
+
+数组作为函数的参数
+下面的例子就是一个打印int数组中元素的方法
+public static void printArray(int[] array) {
+	for(int i = 0; i < array.length; i++){
+		System.out.print(array[i] + " ");
+	}
+}
+
+Array类能方便的操作数组，他提供的所有方法都是静态的。具有以下功能：
+给数组赋值：通过fill方法。
+对数组排序：通过sort方法，按升序。
+比较数组：通过equals方法。
+查找数组元素：通过binarySearch方法。
+
+
+
+
+
+
