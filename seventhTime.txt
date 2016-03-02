@@ -81,8 +81,51 @@ Pattern.UNICODE_CASE
 Pattern.UNIX_LINES(?d)     在这个模式下，只有'/n'才被认作一行的中止，并且与'.'，'^'，以及'$'进行匹配。
 
 
+下面是几个简单的java正则用例：
+比如，在字符串包含验证时
 
+//查找以java开头，任意结尾的字符串
+Pattern pattern = Pattern.compile("java.*");
+Matcher matcher = pattern.matcher("java不是人");
+boolean b = matcher.matches();
+//条件满足时，返回true，否则返回false
+System.out.println(b);
 
+//以多条件分割字符串时
+Pattern pattern = Pattern.complie("[,|]+");
+String[] str = pattern.split("Java Hello World Java,Hello,,World|Sun");
+for (int i=0;i<str.length;i++){
+	System.out.println(strs[i]);
+}
+这个例子中的正则表达式看不懂。
+
+//文件替换(首次出现字符)
+Pattern pattern = Pattern.compile("正则表达式");
+Matcher matcher = pattern.matcher("正则表达式 Hello World,正则表达式 Hello World");
+	<*替换第一个符合正则的数据*>
+System.out.println(matcher.replaceFirst("Java"));
+
+//文字替换(全部)
+Pattern pattern = Pattern.complie("正则表达式");
+Matcher matcher = pattern.matcher("正则表达式,正则表达式,正则表达式");
+System.out.println(matcher.replaceAll("First"));
+
+//文字替换(置换字符)
+Pattern pattern = Pattern.compile("正则表达式");
+Matcher matcher = pattern.matcher("正则表达式，正则表达式，正则表达式");
+StringBuffer sbr = new StringBuffer();
+while(match.find()){
+	matcher.appendReplacement(sbr,"Java");
+}
+matcher.appendTail(sbr);
+System.out.println(sbr.toString());
+
+验证是否为邮箱地址
+
+String str = "tangquanawj@qq.com.cn";
+Pattern pattern = Pattern.compile();
+Matcher matcher = pattern.matcher(Str);
+System.out.println(matcher.matches());
 
 
 
