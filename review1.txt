@@ -1,0 +1,72 @@
+类名：对于所有的类来说，类名的首字母应该大写。
+如果类名由若干单词组成，那么每个单词的首字母应该大写
+例如 MyFirstJavaClass 。
+
+方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。
+所有的标识符都应该以字母（A-Z或者a-z）,美元符（$）、或者下划线（_）开始
+字符之后可以是任何字符的组合
+
+创建对象的的方法有三步：
+声明：声明一个对象，包括对象名称和对象类型。
+实例化：使用关键字new来创建一个对象
+初始化:使用new创建对象时，会调用构造方法初始化对象；
+public class Puppy{
+	public Puppy(String name){
+		System.out.println("Passed Name is :" + name);
+	}
+	public static void main(String[] args){
+		Puppy myPuppy = new Puppy();
+		myPuppy("tommy");
+		
+	}
+}
+
+static 用来修饰类方法和类变量；无论一个类实例化多少对象，他的静态变量只有一份拷贝。静态变量又称为类变量。
+
+抽象方法是一种没有任何实现的方法，该方法的的具体实现由子类提供。抽象方法不能被声明成final和strict。
+public abstract class SuperClass{
+    abstract void m(); //抽象方法
+}
+class SubClass extends SuperClass{
+	void m(){
+		......
+	}
+}
+他的抽象方法由子类提供
+Synchronized
+
+Transient修饰符
+序列化的对象包含被transient修饰的实例变量时，java虚拟机(JVM)跳过该特定的变量。
+该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。
+实例：
+public transient int limit = 55;   // will not persist
+public int b; // will persist
+
+volatile修饰符:
+Volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存中重读该成员变量的值。而且，当成员变量发生变化时，强迫线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。一个volatile对象引用可能是null。
+实例：
+
+
+特殊的for循环
+public class Test{
+	
+	public static void main(String args[]){
+		int[] numbers = {10,2,3,3,3,3};
+		
+		for (int x :members){
+			if (x==10){
+				break;
+			}
+			System.out.println(x);
+			system.out.println("\n");
+		}
+	}
+	
+	
+}
+
+
+continue：结束单次循环
+break:结束整个循环体
+
+**************************下次从Java分支结构开始：
