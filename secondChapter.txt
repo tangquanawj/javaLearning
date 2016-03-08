@@ -76,9 +76,122 @@ Infinity:无穷大
 逻辑运算符和按位运算符是一样的。
 只不过是同个运算符的不同场合的应用。
 
++号运算符：该运算符两侧的操作数只要有一个是字符串String,系统会装换成String然后再做连接。
+
+System.out.println();
+当进行打印的时候，如论任何类型，都自动转换为string进行打印。
+<************************>
+
+<************************>
+表达式： 
+<************************>
+
+<************************>
+语句：
+1、条件语句：
+2、循环语句：
+	for(表达式1; 表达式2； 表达式3)
+	while 语句：
+	while和do while唯一不同的情况是：while循环体可能一次都不会执行，do while一定会执行一次。
+
+demoWhile : while(i < 10) {
+	
+}
+
+demoDoWhile: 
+do {
+	
+}while();//注意，这里有分号，切记。
+
+同一个变量作用里面，同一变量只需要申明一次，不要多次申明。
+3、分支语句：
 <************************>
 
 
+<************************>
+break：用于终止某个语句块的执行，用在循环语句体中，可以强行退出循环
+continue:跳过某次循环，继续下一次循环过程。
+<************************>
 
+<************************>
+switch(i) i可以是byte short int char类型；不能是表达式。
+do {} while();有逗号 别忘了
+
+小心case穿透；一般用break
+一段有用的demo:
+public class TestDemo {
+	public static void main(String[] args) {
+		int i=8;
+		switch(i) {
+			case 8:
+			case 2:
+			case 1:
+				System.out.println("C");
+				break;
+			case 8:
+				System.out.println("D");
+			default:
+			System.out.println("Error");
+		}
+	}
+}
+当i等于1或2或8时，输出C。
+
+java中Switch语句只能探测int类型值。
+<************************>
+
+<************************>
+方法：C语言叫函数，java叫方法。
+方法的本质是增强程序的复用性。
+方法是用来完成特定功能的代码片段。
+方法：
+1、形式参数：用于接收外界输入的数据。
+2、实参：调用方法时实际传给方法的数据
+3、返回值：
+4、返回值类型： 
+
+<************************>
+方法的demo:
+
+public class Demo {
+	/*主函数*/
+	public static void main(String[] args) {
+		m();
+		m1(2);
+		m2(2,3);
+		System.out.println("Hello World");
+	}
+
+	public static void m1() {
+	//return
+	System.out.println("ok");
+	System.out.println("Hello");
+	}
+
+	public static void m2(int i) {
+	//return
+	System.out.println("ok");
+	System.out.println(i);
+	}
+
+	public static void m3(int i, int j) {
+	//return
+	System.out.println("ok");
+	System.out.println("Hello");
+	}
+
+	public static int m3(int i, int j) {
+	//return
+		return i>j ? i : j;
+	}
+}
+方法执行值传递的原则
+java方法：基础类型传递的是改数据本身；引用类型传递的是对象的引用，不是对象本身。
+
+
+
+总复习：
+1、学程序最快的方法是看例子程序
+2、局部变量放在stack里面。
 
 
