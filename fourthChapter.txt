@@ -1,0 +1,33 @@
+java异常概念：运行期间出现的错误。
+java异常的分类：数组下标的越界，算术违规
+异常的捕获和处理：try catch语句  成对出现。
+
+运行期出现的错误：java异常
+观察错误的名字和行号最重要 尝试自己调试java错误。程序是调试调出来的，不是写出来的。
+java异常的分类：数组下标的越界、算术违规等
+在java中捕获异常的方法：
+try关键字。
+例子程序：
+public class TestEx {
+	public static void main(String[] args) {
+		int[] array = {1, 3, 3};
+		System.out.println(array[2]);
+		try {
+		System.out.println(2/0);			
+		} catch (ArithmeticException ae) { //ae是对象名字
+			System.out.println("你好，世界！");
+			ae.printStackTrace();//打印错误的堆栈信息
+		}
+	}
+}
+
+try catch语句
+printStackTrace()打印异常的堆栈信息。
+
+异常的分类：所有的异常类来自:Throwable类。
+他的两个子类是：error(系统内部错误)、Exception(可以解决)
+exception又可以分成RuntimeException等异常类。
+error：叫做虚拟机错误。无法处理。
+Exception:可以解决的错误。
+RuntimeException:经常出现的错误。可以catch，也可以不去catch它。
+API中写了throws的异常必须catch。这些属于exception其他的异常类。
